@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -64,9 +63,7 @@ export default function HomePage() {
     setIsLoading(true);
     setError(null);
     setSlides([]);
-    // Keep userInput in the textarea for now, clear it on new attempt or success
-    // setUserInput(''); 
-
+  
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
@@ -226,7 +223,7 @@ export default function HomePage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 120 }}
         >
-          Gemini Story Slides
+          Story time with cute animals!!
         </motion.h1>
         <DropdownMenu
           animals={availableAnimals}
