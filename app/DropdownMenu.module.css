@@ -1,0 +1,113 @@
+/* src/components/DropdownMenu.module.css */
+.dropdownContainer {
+    position: relative;
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    z-index: 10; /* Ensure dropdown is on top */
+  }
+  
+  .dropdownButton {
+    background-color: #6002ee; /* A vibrant purple */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; /* Pill shape */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .dropdownButton:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+  }
+  
+  .arrowIcon {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  
+  .dropdownList {
+    position: absolute;
+    background-color: #3c096c; /* Darker purple for dropdown */
+    min-width: 220px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 8px 0;
+    margin-top: 8px;
+    list-style-type: none;
+    z-index: 1;
+    overflow: hidden; /* For rounded corners with items */
+  }
+  
+  .dropdownItem {
+    color: #e0aaff; /* Lighter purple text */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #5a189a;
+    color: white;
+  }
+  
+  .dropdownItem.selected {
+    background-color: #7b2cbf;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .addOwnItem {
+    border-top: 1px solid #5a189a;
+    margin-top: 5px;
+    padding-top: 10px;
+  }
+  
+  .customInputItem {
+    padding: 10px 15px;
+    background-color: #4a0e78; /* Slightly different background for input area */
+  }
+  
+  .customForm {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .customInput {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #7b2cbf;
+    background-color: #e0aaff;
+    color: #3c096c;
+    font-size: 14px;
+  }
+  
+  .customInput::placeholder {
+    color: #5a189a;
+  }
+  
+  .customSubmitButton {
+    padding: 8px 12px;
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .customSubmitButton:hover {
+    background-color: #9d4edd;
+  }
