@@ -43,14 +43,16 @@ export default function HomePage() {
     try {
       const parsed = JSON.parse(errorText);
       if (parsed.error) return parsed.error;
-    } catch (e) {
+    } catch {
       const regex = /{"error":(.*)}/gm;
       const m = regex.exec(errorText);
       if (m && m[1]) {
         try {
           const e = JSON.parse(m[1]);
           return e.message;
-        } catch (innerE) { /* ignore */ }
+        } catch {
+          /* ignore */
+        }
       }
     }
     return errorText;
@@ -158,9 +160,10 @@ export default function HomePage() {
         setSlides(prevSlides => [...prevSlides, newSlide]);
       }
 
-    } catch (e: any) {
-      console.error("Generation Error:", e);
-      setError(`Something went wrong: ${parseError(e.message || String(e))}`);
+    } catch (error: Error | unknown) {
+      console.error("Generation Error:", error);
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      setError(`Something went wrong: ${parseError(errorMessage)}`);
     } finally {
       setIsLoading(false);
       inputRef.current?.focus();

@@ -68,9 +68,9 @@ export async function POST(req: NextRequest) {
       headers: { 'Content-Type': 'application/x-ndjson' }, // Use ndjson for streaming JSON objects
     });
 
-  } catch (e: any) {
+  } catch (e: Error | unknown) {
     console.error("API Route Error:", e);
-    const errorMessage = e.error?.message || e.message || 'An unknown error occurred';
+    const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred';
     return NextResponse.json({ error: `Something went wrong on the server: ${errorMessage}` }, { status: 500 });
   }
 }
