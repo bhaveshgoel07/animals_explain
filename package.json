@@ -2,9 +2,18 @@
   "name": "animals_explain",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "cloudflare": {
+    "build": {
+      "nodeVersion": "20"
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "cloudflare:build": "NODE_VERSION=20 next build",
     "start": "next start",
     "lint": "next lint"
   },
